@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,10 +23,10 @@ export default function RootLayout({
             <h1 className="text-2xl font-bold">EYI</h1>
             <nav>
               <ul className="flex space-x-4">
-                <li><Button variant="ghost" className="text-white">Home</Button></li>
-                <li><Button variant="ghost" className="text-white">Eye Health</Button></li>
-                <li><Button variant="ghost" className="text-white">Exams</Button></li>
-                <li><Button variant="ghost" className="text-white">Tips</Button></li>
+                <li><Link href="/"><Button variant="ghost" className="text-white">Home</Button></Link></li>
+                <li><Link href="/eye-health"><Button variant="ghost" className="text-white">Eye Health</Button></Link></li>
+                <li><Link href="/exams"><Button variant="ghost" className="text-white">Exams</Button></Link></li>
+                <li><Link href="/tips"><Button variant="ghost" className="text-white">Tips</Button></Link></li>
               </ul>
             </nav>
           </div>

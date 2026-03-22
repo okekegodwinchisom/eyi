@@ -7,6 +7,8 @@ eyi is a comprehensive eye health tracking application that helps users monitor 
 - **Eye Health Tracking**: Monitor your eye health metrics over time
 - **Eye Exam Scheduling**: Schedule and manage your eye exams
 - **Personalized Eye Care Tips**: Receive tailored advice for your eye health
+- **User Authentication**: Secure login and registration system
+- **Dashboard**: Personalized dashboard for tracking eye health metrics
 
 ## Tech Stack
 
@@ -55,18 +57,35 @@ eyi/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx
-│   │   └── layout.tsx
+│   │   ├── layout.tsx
+│   │   ├── auth/
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   └── register/
+│   │   │       └── page.tsx
+│   │   └── dashboard/
+│   │       └── page.tsx
 │   ├── components/
-│   │   └── ui/
-│   │       └── button.tsx
+│   │   ├── ui/
+│   │   │   └── button.tsx
+│   │   ├── auth/
+│   │   │   ├── LoginForm.tsx
+│   │   │   └── RegisterForm.tsx
+│   │   └── dashboard/
+│   │       ├── EyeHealthTracker.tsx
+│   │       └── ExamScheduler.tsx
 │   ├── server/
 │   │   ├── server.js
 │   │   ├── routes/
-│   │   │   └── index.js
+│   │   │   ├── index.js
+│   │   │   ├── auth.js
+│   │   │   └── dashboard.js
 │   │   ├── middleware/
 │   │   │   └── auth.js
 │   │   └── models/
-│   │       └── index.js
+│   │       ├── index.js
+│   │       ├── User.js
+│   │       └── EyeHealthMetric.js
 ├── public/
 ├── package.json
 ├── next.config.js
