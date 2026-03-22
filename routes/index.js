@@ -108,4 +108,52 @@ router.get('/eye-care-tips', authenticate, async (req, res) => {
   }
 });
 
+// Add a new eye care tip
+router.post('/eye-care-tips', authenticate, async (req, res) => {
+  try {
+    const { title, description, category } = req.body;
+    const eyeCareTip = new EyeCareTip({
+      user: req.user._id,
+      title,
+      description,
+      category
+    });
+    await eyeCareTip.save();
+    res.status(201).send(eyeCareTip);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+// Update an eye care tip
+router.patch('/eye-care-tips/:id', authenticate, async (req, res) => {
+  try {
+    const { title, description, category } = req.body;
+    const eyeCareTip = await EyeCareTip.findOneAndUpdate(
+      { _id: req.params.id, user: req.user._id },
+      { title, description, category },
+      { new: true }
+    );
+    if (!eyeCareTip) {
+      return res.status(404).send();
+    }
+    res.send(eyeCareTip);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+// Delete an eye care tip
+router.delete('/eye-care-tips/:id', authenticate, async (req, res) => {
+  try {
+    const eyeCareTip = await EyeCareTip.findOneAndDelete({ _id: req.params.id, user: req.user._id });
+    if (!eyeCareTip) {
+      return res.status(404).send();
+    }
+    res.send(eyeCareTip);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 module.exports = router;

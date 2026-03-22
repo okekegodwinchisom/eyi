@@ -73,7 +73,8 @@ eyi/
 │   │   │   └── RegisterForm.tsx
 │   │   └── dashboard/
 │   │       ├── EyeHealthTracker.tsx
-│   │       └── ExamScheduler.tsx
+│   │       ├── ExamScheduler.tsx
+│   │       └── EyeCareTips.tsx
 │   ├── server/
 │   │   ├── server.js
 │   │   ├── routes/
@@ -85,7 +86,8 @@ eyi/
 │   │   └── models/
 │   │       ├── index.js
 │   │       ├── User.js
-│   │       └── EyeHealthMetric.js
+│   │       ├── EyeHealthMetric.js
+│   │       └── EyeCareTip.js
 ├── public/
 ├── package.json
 ├── next.config.js

@@ -27,6 +27,7 @@ export default function RootLayout({
                 <li><Link href="/eye-health"><Button variant="ghost" className="text-white">Eye Health</Button></Link></li>
                 <li><Link href="/exams"><Button variant="ghost" className="text-white">Exams</Button></Link></li>
                 <li><Link href="/tips"><Button variant="ghost" className="text-white">Tips</Button></Link></li>
+                <li><Link href="/login"><Button variant="ghost" className="text-white">Login</Button></Link></li>
               </ul>
             </nav>
           </div>
